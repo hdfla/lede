@@ -1852,6 +1852,18 @@ define Device/xiaomi_mi-router-3-pro
 endef
 TARGET_DEVICES += xiaomi_mi-router-3-pro
 
+define Device/xiaomi_mi-router-3-pro-spi
+  $(Device/dsa-migration)
+  $(Device/uimage-lzma-loader)
+  IMAGE_SIZE := 16064k
+  DEVICE_VENDOR := Xiaomi
+  DEVICE_MODEL := Mi Router 3 Pro
+  DEVICE_PACKAGES := kmod-mt7615-firmware kmod-usb3 \
+	kmod-usb-ledtrig-usbport
+  SUPPORTED_DEVICES += xiaomi,mir3pspi
+endef
+TARGET_DEVICES += xiaomi_mi-router-3-pro-spi
+
 define Device/xiaomi_mi-router-4
   $(Device/xiaomi_nand_separate)
   DEVICE_MODEL := Mi Router 4
