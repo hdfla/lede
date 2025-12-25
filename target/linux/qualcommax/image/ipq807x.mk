@@ -27,6 +27,20 @@ define Device/aliyun_ap8220
 endef
 TARGET_DEVICES += aliyun_ap8220
 
+define Device/aliyun_xglink5g
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := Aliyun
+	DEVICE_MODEL := XGLINK 5G
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@hk09
+	SOC := ipq8072
+	DEVICE_PACKAGES := ipq-wifi-aliyun_xglink5g kmod-spi-gpio \
+		kmod-usb-serial-option uqmi
+endef
+TARGET_DEVICES += aliyun_xglink5g
+
 define Device/arcadyan_aw1000
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
