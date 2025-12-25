@@ -11,6 +11,7 @@ platform_check_image() {
 platform_do_upgrade() {
 	case "$(board_name)" in
 	aliyun,ap8220|\
+	aliyun,xglink-5g|\
 	arcadyan,aw1000|\
 	cmcc,rm2-6|\
 	compex,wpq873|\
